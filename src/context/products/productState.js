@@ -13,10 +13,9 @@ export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(ProductReducer, initialState);
 
   const fetchProducts = async () => {
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const url = "https://store-api.glitch.me/api/products"; // site that doesn’t send Access-Control-*
     try {
-      const response = await productService.get(proxyurl + url);
+      const response = await productService.get(url);
       dispatch({ type: "FETCH_PRODUCTS", products: response.data });
     } catch (error) {
       toast.error(`An error has occured, please try again later`);
