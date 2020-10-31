@@ -13,9 +13,10 @@ export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(ProductReducer, initialState);
 
   const fetchProducts = async () => {
+    const proxyurl = "https://howling-grave-07096.herokuapp.com/";
     const url = "https://store-api.glitch.me/api/products"; // site that doesn’t send Access-Control-*
     try {
-      const response = await productService.get(url);
+      const response = await productService.get(proxyurl + url);
       dispatch({ type: "FETCH_PRODUCTS", products: response.data });
     } catch (error) {
       toast.error(`An error has occured, please try again later`);
