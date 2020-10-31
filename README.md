@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Shore Store App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Dependencies/Technologies
+The app is built using the following technologies:
 
-## Available Scripts
+- React.js, Styled components/CSS, Jest, Enzymes.
 
-In the project directory, you can run:
+### The tool you need to have installed on your machine:
+- [Node.js](https://nodejs.org/en/download/)
 
-### `npm start`
+`NB`: Fetching data from [glitch](https://store-api.glitch.me/api/products) is being blocked by cors. I have come up with a way around this by using a proxy, I understand that it's not the ideal solution, but you can try access the api endpoint without a proxy and see if it will work on your end.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### App setup and installation:
+- Clone the repository [here](https://github.com/hariclerry/shoe-store-app) 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### To run the app locally
 
-### `npm test`
+```
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm start
+```
 
-### `npm run build`
+The app now should be running on https://localhost:3000. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### To run tests:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+npm run test
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Discussion
 
-### `npm run eject`
+#### Implementations
+1. User’s should see the products.
+    Api requests is being made to the products' api and products are displayed on the page for the users
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. User’s should be able to add products to the cart.
+   - I implemented the add products functionality as per the requirements whereby users are able to add products to the cart and remove products.
+3. User’s should be able to “pay” (no real operations behind)
+   I implemented a simple payment form to simulate payement when a user wants to make payments for the items they have add to the cart.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Requirements
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The React app should include :
+● Both functional and class based components
+   The implementations include both functional and class based components with the use of both hooks and states
+● Hooks
+   The app has been implementated with various hooks such as useState, useEffect, useReducer, etc.
+● A state management solution (choose what suits best)
+  The state management solution chosen is Context Api with useReducer and local storage for persisting data.
+   
+● A component styling library
+   The component styling library used is the styled-components for styling the app.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Test
+ - Setup testing using Jest test runner and Enzymes testing utility
+ - Wrote tests for the implemented components and functionalities
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+####Live Demo
+The app has been dployed on Netlify [here](https://jovial-benz-909d74.netlify.app/)

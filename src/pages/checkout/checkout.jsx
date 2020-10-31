@@ -5,7 +5,7 @@ import { CartContext } from "context/cart/cartState";
 import CustomButton from "components/customButton/button";
 
 import CheckoutItem from "components/checkout-items/checkoutItems";
-import PaymentModal from "components/paymentModal/modal";
+import PaymentModal from "components/payment-modal/modal";
 
 import {
   CheckoutPageContainer,
@@ -48,11 +48,15 @@ const CheckoutPage = () => {
         ))}
         <TotalContainer>TOTAL: ${total}</TotalContainer>
         <CustomButton
+          disabled={cartItems.length === 0}
           onClick={async () => {
-            await CustomDialog(<PaymentModal />, {
-              title: "Payment Details",
-              showCloseIcon: true,
-            });
+            await CustomDialog(
+              <PaymentModal total={total} cartItems={cartItems} />,
+              {
+                title: "Payment Details",
+                showCloseIcon: true,
+              }
+            );
           }}
         >
           Pay

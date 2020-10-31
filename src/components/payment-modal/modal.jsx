@@ -4,12 +4,12 @@ import {
   useDialog,
   ModalContent,
   ModalFooter,
-  ModalButton,
+  ModalButton
 } from "react-st-modal";
 
 import FormInput from "components/form-input/input";
 
-const PaymentModal = () => {
+const PaymentModal = ({ total, cartItems }) => {
   const dialog = useDialog();
 
   const [paymentDetails, setPaymentDetails] = useState({
@@ -28,8 +28,9 @@ const PaymentModal = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name && billingInfo && creditCardNumber) {
+      // if we were making api requests it would be here user details, cartItems and total amount
       dialog.close();
-      toast.success(`Payment Successful, ${name}`);
+      toast.success(`Payment was Successful, ${name}`);
       setPaymentDetails({
         name: "",
         billingInfo: "",
@@ -68,6 +69,7 @@ const PaymentModal = () => {
           label="Credit Card Number"
           required
         />
+        <div>Total Amount: ${total}</div>
       </ModalContent>
       <ModalFooter>
         <ModalButton

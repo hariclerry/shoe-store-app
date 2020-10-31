@@ -1,12 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const CollectionPreviewContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 50px 30px 0 30px;
-`;
 
 export const TitleContainer = styled.h1`
   font-size: 28px;
@@ -20,6 +14,7 @@ export const TitleContainer = styled.h1`
 export const ProductPreviewContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  padding: 30px 50px 0 50px;
 `;
 
 

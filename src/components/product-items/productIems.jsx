@@ -10,7 +10,7 @@ import {
   PriceContainer,
 } from "./productItems.styles";
 
-const CollectionItem = ({ product }) => {
+const ProductItem = ({ product }) => {
   const { addCartItem } = useContext(CartContext);
    const { nom, price, currency, imageUrl } = product;
 
@@ -31,4 +31,4 @@ const CollectionItem = ({ product }) => {
   );
 };
 
-export default CollectionItem;
+export default ProductItem;
